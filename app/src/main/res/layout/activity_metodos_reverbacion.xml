@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/activity_metodos_reverbacion"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.juank.schroederapp.MetodosReverbacion">
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/lin"
+        android:weightSum="1">
+
+    <TextView
+        android:text="Humedad Relativa:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView9"
+        android:textStyle="normal|bold"
+        android:textSize="18sp"/>
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:id="@+id/editText2"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                />
+
+            <TextView
+        android:text="Beta (Método Arau):"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText2"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView10"
+        android:textStyle="normal|bold"
+        android:textSize="18sp"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:layout_below="@+id/editText2"
+        android:layout_toEndOf="@+id/textView10" />
+
+        <Button
+                android:text="Aceptar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button6"
+                android:onClick="onClick"
+                android:layout_below="@+id/textView10"
+                android:layout_alignParentStart="true" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart"
+                android:visibility="invisible"
+                android:layout_alignStart="@+id/button6"
+                android:layout_marginStart="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_toStartOf="@+id/button8" />
+
+            <ScrollView
+                android:id="@+id/scrollvertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:layout_weight="1">
+
+
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/scrollhorizontal"
+                    android:scrollbars="horizontal"
+                    >
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TableLayout
+                            android:id="@+id/tabla2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                        </TableLayout>
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+            </ScrollView>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
